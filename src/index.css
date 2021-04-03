@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Metamorphous&family=Offside&family=Playfair+Display+SC:ital@0;1&display=swap');
+
+* {
+  margin: 0;
+  font-family: "Metamorphous";
+  background-color: #307672;
+  color: #e4eddb
+}
+
+.navbar {
+  padding: 20px;
+  display: flex;
+  /* align-items: center; */
+  max-width: 600px;
+  margin: 0 auto;
+  border-bottom: 1px solid #e4eddb;
+}
+
+.navbar h1 {
+  color: #e4eddb;
+  font-size: 2.5rem;
+}
+
+.navbar .links {
+  margin-left: auto;
+}
+
+.content {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  padding: 6px;
+  font-family: "Playfair";
+}
+
+.navbar a:hover {
+  color: #1a3c40;
+}
