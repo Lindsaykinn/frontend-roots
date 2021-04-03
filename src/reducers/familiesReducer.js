@@ -3,7 +3,7 @@ const initialState = {
   loading: true
 }
 
-const familiesReducer = (state, action) => {
+const familiesReducer = (state=initialState, action) => {
   switch(action.type){
     default:
       return state;
