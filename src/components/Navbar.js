@@ -11,7 +11,7 @@ const Navbar = () => {
         borderRadius: '8px'
       }}>Add Family</Link>
       &nbsp;
-      <Link to='/list' style={{
+      <Link to='/families' style={{
         color: '#e4eddb',
         backgroundColor: '#144d53',
         borderRadius: '8px'
