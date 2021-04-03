@@ -13,6 +13,11 @@ class App extends Component {
     this.props.getFamilies()
   }
   render(){
+    if (this.props.loading){
+      return (
+        <h3>Loading...</h3>
+      )
+    }
     return (
       <Router>      
           <Navbar />
