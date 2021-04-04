@@ -1,16 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Metamorphous&family=Offside&family=Playfair+Display+SC:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Playfair+Display+SC:ital@0;1&display=swap');;
 
 * {
   margin: 0;
-  font-family: "Metamorphous";
+  font-family: "Bodoni Moda";
   background-color: #307672;
   color: #e4eddb
+}
+
+h2 {
+  font-family: "Bodoni Moda";
 }
 
 .navbar {
   padding: 20px;
   display: flex;
-  /* align-items: center; */
+  align-items: center;
   max-width: 600px;
   margin: 0 auto;
   border-bottom: 1px solid #e4eddb;
@@ -19,6 +23,10 @@
 .navbar h1 {
   color: #e4eddb;
   font-size: 2.5rem;
+}
+
+.navbar h1:hover{
+  color: #1a3c40
 }
 
 .navbar .links {
@@ -37,6 +45,7 @@
   font-family: "Playfair";
 }
 
+/* how come this isnt working??? */
 .navbar a:hover {
   color: #1a3c40;
 }
