@@ -16,6 +16,11 @@ const familiesReducer = (state=initialState, action) => {
           loading: false,
           families: action.families
         }
+        case 'ADD_FAMILY':
+          return {
+            ...state,
+            families: [...state.families, action.family]
+          }
     default:
       return state;
   }
