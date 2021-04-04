@@ -1,9 +1,51 @@
-const Form = () => {
-  return ( 
-    <div>
-      <h2>Add Family</h2>
-    </div>
-   );
+import React, { Component } from 'react'
+import { addFamily } from '../actions'
+import { connect } from 'react-redux'
+
+class Form extends Component {
+
+  state = {
+    name: '',
+    image: '',
+    story: ''
+  }
+
+  handleChange = e =>{
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
+  handleSubmit = e => {
+    e.preventDefault()
+    this.props.addFamily(this.state, this.props.history)
+  }
+
+  render(){
+    return ( 
+      <div>
+        <h2>Add Family</h2>
+        <form onSubmit={ this.handleSubmit }>
+          <div>
+            <label htmlFor='name'>Name:</label>
+            <input type="text" id='name' name='name' value={this.state.name} onChange={this.handleChange}/>
+          </div>
+          <br/>
+          <div>
+            <label htmlFor='image'>Image URL:</label>
+            <input type="text" id='image' name='image' value={this.state.image} onChange={this.handleChange}/>
+          </div>
+          <br/>
+          <div>
+            <label htmlFor='story'>Share a Story:</label>
+            <textarea type="text" id='story' name='story' value={this.state.story} onChange={this.handleChange}/>
+          </div>
+          <br/>
+          <input type="submit" value='Add Family'/>
+        </form>
+      </div>
+     );
+  }
 }
  
-export default Form;
+export default connect(null, { addFamily })(Form);
