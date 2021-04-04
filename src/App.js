@@ -7,6 +7,7 @@ import Home from './components/Home'
 import Footer from './components/Footer'
 import ErrorPage from './components/Error'
 import List from './components/List'
+import Form from './components/Form'
 
 class App extends Component {
   componentDidMount(){
@@ -24,8 +25,9 @@ class App extends Component {
         <div className="content">
           <Switch>
             <Route exact path='/'><Home /></Route>
+            <Route exact path='/families' component={ List }></Route>
+            <Route exact path='/families/new' component={ Form }></Route>
             <Route component={ ErrorPage }></Route>
-            <Route exact path='/families' component={ List }>All Families</Route>
           </Switch>
           <Footer />
         </div>
