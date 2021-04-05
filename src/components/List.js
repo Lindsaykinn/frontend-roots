@@ -1,18 +1,21 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Family from './Family'
+import {Link} from 'react-router-dom'
 
-class List extends Component {
-  render(){
-    const families = this.props.families.map( (family, i) => <Family key={i} name={family.name} />)
-    return ( 
-      <div>
-        <h2>All Families</h2>
-        { families }
-      </div>
-     );
-  }
-  }
+const List =({families, name}) =>{
+
+  return ( 
+    <div>
+      <h2>All Families</h2>
+      {families.map((family) => (
+        <Link to={`/families/${family.id}`}>
+        <h2>{family.name}</h2>
+        </Link>
+      ))}
+    </div>
+   );
+}
 
   const mapStateToProps = state => {
     return {
