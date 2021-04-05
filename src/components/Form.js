@@ -6,6 +6,7 @@ class Form extends Component {
 
   state = {
     name: '',
+    country_of_origin: '',
     image: '',
     story: ''
   }
@@ -25,10 +26,17 @@ class Form extends Component {
     return ( 
       <div>
         <h2>Add Family</h2>
+        <div className="form">
+
         <form onSubmit={ this.handleSubmit }>
           <div>
             <label htmlFor='name'>Name:</label>
             <input type="text" id='name' name='name' value={this.state.name} onChange={this.handleChange}/>
+          </div>
+          <br/>
+          <div>
+            <label htmlFor='country_of_origin'>Country of Origin:</label>
+            <input type="text" id='country_of_origin' name='country_of_origin' value={this.state.country_of_origin} onChange={this.handleChange}/>
           </div>
           <br/>
           <div>
@@ -43,6 +51,7 @@ class Form extends Component {
           <br/>
           <input type="submit" value='Add Family'/>
         </form>
+        </div>
       </div>
      );
   }
