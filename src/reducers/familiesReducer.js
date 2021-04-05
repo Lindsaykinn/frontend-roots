@@ -3,7 +3,7 @@ const initialState = {
   loading: true
 }
 
-const familiesReducer = (state=initialState, action) => {
+export const familiesReducer = (state=initialState, action) => {
   switch(action.type){
     case 'LOADING':
       return{
@@ -25,5 +25,3 @@ const familiesReducer = (state=initialState, action) => {
       return state;
   }
 }
- 
-export default familiesReducer;
