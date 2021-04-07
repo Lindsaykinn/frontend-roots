@@ -1,8 +1,9 @@
 import { connect } from 'react-redux'
 import {Link, Route} from 'react-router-dom'
-import FamilyDetails3 from './FamilyDetails3'
+import FamilyDetails from './FamilyDetails'
 
-const List =({match, families}) =>{
+const FamilyList =({match, families}) =>{
+  
 
   return ( 
     <div>
@@ -10,7 +11,7 @@ const List =({match, families}) =>{
       {families.map((family, idx) => (
        <Link key={idx} to={`/families/${family.id}`}>
         <h2>{family.surname}</h2>
-        <Route path={`${match.url}/:familyId`} component={FamilyDetails3}/>
+        <Route path={`${match.url}/:familyId`} component={FamilyDetails}/>
         </Link>
       ))}
     </div>
@@ -23,4 +24,4 @@ const List =({match, families}) =>{
     }
   }
  
-export default connect(mapStateToProps)(List);
+export default connect(mapStateToProps)(FamilyList);
