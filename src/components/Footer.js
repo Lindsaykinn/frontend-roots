@@ -1,8 +1,8 @@
 const Footer = () => {
   return ( 
-    <div>
-      &copy; Property of Lindsay Kinn
-    </div>
+      <div class='footer'>
+        &copy; Property of Lindsay Kinn
+      </div>
    );
 }
  
