@@ -14,6 +14,10 @@ h2 {
   font-family: "Bodoni Moda";
 }
 
+button {
+  background-color: #307672;
+}
+
 .navbar {
   padding: 20px;
   display: flex;
@@ -51,6 +55,7 @@ h2 {
 .navbar a:hover {
   color: #1a3c40;
 }
+
 .form input{
   color: #1a3c40;
 }
@@ -58,3 +63,12 @@ h2 {
 .form textarea{
   color: #1a3c40
 }
+
+/* i can't get footer to center on page */
+.footer {
+  display: block;
+  position:absolute;
+  bottom: 0;
+  padding: 50px 0 20px;
+}
+
