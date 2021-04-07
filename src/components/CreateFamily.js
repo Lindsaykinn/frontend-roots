@@ -8,6 +8,7 @@ class Form extends Component {
     name: '',
     country_of_origin: '',
     image: '',
+    selectedFile: null,
     story: ''
   }
 
@@ -20,6 +21,16 @@ class Form extends Component {
   handleSubmit = e => {
     e.preventDefault()
     this.props.addFamily(this.state, this.props.history)
+  }
+
+  handleSelectFile = e => {
+    this.setState({
+      selectedFile: e.target.files[0]
+    })
+  }
+
+  handleUploadFile = () => {
+    console.log("idk what i'm doing here yet")
   }
 
   render(){
@@ -40,9 +51,10 @@ class Form extends Component {
           </div>
           <br/>
           <div>
-            <label htmlFor='image'>Image URL:</label>
-            <input type="text" id='image' name='image' value={this.state.image} onChange={this.handleChange}/>
-          </div>
+            <label htmlFor='image'>Image</label>
+            <input type="file" id='image' name='image' value={this.state.image} onChange={this.handleSelectFile}/>          
+            <button onClick={this.handleUploadFile}>upload image</button>
+            </div>
           <br/>
           <div>
             <label htmlFor='story'>Share a Story:</label>
