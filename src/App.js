@@ -9,6 +9,7 @@ import ErrorPage from './components/Error'
 import FamilyList from './components/FamilyList'
 import CreateFamily from './components/CreateFamily'
 import FamilyDetails from './components/FamilyDetails'
+import Slideshow from './components/Slideshow'
 
 class App extends Component {
   componentDidMount(){
@@ -25,7 +26,7 @@ class App extends Component {
           <Navbar />
         <div className="content">
           <Switch>
-            <Route exact path='/'><Home /></Route>
+            <Route exact path='/'><Slideshow /></Route>
             <Route exact path='/families' component={ FamilyList }/>
             <Route exact path='/families/new' component={ CreateFamily }></Route>
             <Route exact path= "/families/:id" component={ FamilyDetails }></Route> 
