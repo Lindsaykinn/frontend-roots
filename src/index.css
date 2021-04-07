@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Playfair+Display+SC:ital@0;1&display=swap');
 
+@import "react-slideshow-image/dist/styles.css";
+
 * {
   margin: 0;
   font-family: "Bodoni Moda";
@@ -70,5 +72,10 @@ button {
   position:absolute;
   bottom: 0;
   padding: 50px 0 20px;
+}
+
+.image-container
+{
+  object-fit: cover;
 }
 
