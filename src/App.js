@@ -6,8 +6,9 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Footer from './components/Footer'
 import ErrorPage from './components/Error'
-import List from './components/List'
-import Form from './components/Form'
+import FamilyList from './components/FamilyList'
+import CreateFamily from './components/CreateFamily'
+import FamilyDetails from './components/FamilyDetails'
 
 class App extends Component {
   componentDidMount(){
@@ -25,8 +26,9 @@ class App extends Component {
         <div className="content">
           <Switch>
             <Route exact path='/'><Home /></Route>
-            <Route exact path='/families' component={ List }></Route>
-            <Route exact path='/families/new' component={ Form }></Route>
+            <Route exact path='/families' component={ FamilyList }/>
+            <Route exact path='/families/new' component={ CreateFamily }></Route>
+            <Route exact path= "/families/:id" component={ FamilyDetails }></Route> 
             <Route component={ ErrorPage }></Route>
           </Switch>
           <Footer />
