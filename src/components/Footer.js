@@ -1,6 +1,6 @@
 const Footer = () => {
   return ( 
-      <div class='footer'>
+      <div className='footer'>
         &copy; Property of Lindsay Kinn
       </div>
    );
