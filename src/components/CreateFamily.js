@@ -1,36 +1,33 @@
 import React, { Component } from 'react'
-import { addFamily } from '../actions'
+import { addFamily } from '../_actions'
 import { connect } from 'react-redux'
 
 class Form extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: '',
+      country_of_origin: '',
+      story: '',
+      person:{
+        name: '', 
+        dob: ''
+      },
+    };
 
-  state = {
-    name: '',
-    country_of_origin: '',
-    image: '',
-    selectedFile: null,
-    story: ''
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange = e =>{
+  handleChange(e){
     this.setState({
       [e.target.name]: e.target.value
     })
   }
 
-  handleSubmit = e => {
+  handleSubmit(e){
     e.preventDefault()
     this.props.addFamily(this.state, this.props.history)
-  }
-
-  handleSelectFile = e => {
-    this.setState({
-      selectedFile: e.target.files[0]
-    })
-  }
-
-  handleUploadFile = () => {
-    console.log("idk what i'm doing here yet")
   }
 
   render(){
@@ -51,14 +48,18 @@ class Form extends Component {
           </div>
           <br/>
           <div>
-            <label htmlFor='image'>Image</label>
-            <input type="file" id='image' name='image' value={this.state.image} onChange={this.handleSelectFile}/>          
-            <button onClick={this.handleUploadFile}>upload image</button>
-            </div>
+            <label htmlFor='story'>Family Story:</label>
+            <textarea type="text" id='story' name='story' value={this.state.story} onChange={this.handleChange}/>
+          </div>
           <br/>
           <div>
-            <label htmlFor='story'>Share a Story:</label>
-            <textarea type="text" id='story' name='story' value={this.state.story} onChange={this.handleChange}/>
+            <label htmlFor='person'>Family Member:</label>
+            <input type="text" id='person' name='person' value={this.state.person.name} onChange={this.handleChange}/>
+          </div>
+          <br/>
+          <div>
+            <label htmlFor='dob'>Date of Birth:</label>
+            <input type="date" id='dob' name='dob' value={this.state.person.dob} onChange={this.handleChange}/>
           </div>
           <br/>
           <input type="submit" value='Add Family'/>
