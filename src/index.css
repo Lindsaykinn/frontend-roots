@@ -43,9 +43,10 @@ button {
 }
 
 .content {
-  max-width: 600px;
+  width: 95vw;
   margin: 40px auto;
   padding: 20px;
+  text-align: center;
 }
 
 .navbar a {
@@ -63,7 +64,10 @@ button {
 }
 
 .form textarea{
-  color: #1a3c40
+  color: #1a3c40;
+  vertical-align: middle;
+  width: 423px; 
+  height: 86px;
 }
 
 /* i can't get footer to center on page */
@@ -76,6 +80,9 @@ button {
 
 .image-container
 {
-  object-fit: cover;
+  object-fit: contain;
 }
 
+/* .slide-container {
+  max-height: 500px;
+} */
