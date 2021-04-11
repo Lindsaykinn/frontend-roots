@@ -25,3 +25,22 @@ export const addFamily = (family, history) => {
 
   }
 }
+
+export const deleteFamily = (family, history) => {
+  return dispatch => {
+    console.log('delete_family_start')
+      dispatch({ type: 'DELETE_FAMILY_START'})
+      fetch('http://localhost:3001/families/' + family.id, {
+        method: 'DELETE', 
+        headers: {
+          "Accept": 'application/json',
+          "Content-Type": 'application/json'
+        }
+      })
+      .then (() => {
+        dispatch({ type: 'DELETE_FAMILY_SUCCESS', family})
+        history.push('/families')
+      })
+    }
+  }
+
