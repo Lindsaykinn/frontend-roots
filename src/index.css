@@ -49,6 +49,14 @@ button {
   text-align: center;
 }
 
+.details {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 .navbar a {
   text-decoration: none;
   padding: 6px;
