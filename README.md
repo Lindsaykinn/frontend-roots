@@ -1,3 +1,15 @@
+handleChange = (e) =>{
+      if (e.target.id === "first_name" || e.target.id === "dob"){
+        this.setState({
+          people_attributes: {...this.state.people_attributes, [e.target.id]: e.target.value}
+        })
+      }
+      this.setState({
+        ...this.state, [e.target.name]: e.target.value
+      })
+    }
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
