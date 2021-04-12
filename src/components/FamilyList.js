@@ -3,8 +3,6 @@ import {Link, Route} from 'react-router-dom'
 import FamilyDetails from './FamilyDetails'
 
 const FamilyList =({match, families}) =>{
-  
-
   return ( 
     <div>
       <h1>All Families</h1>
