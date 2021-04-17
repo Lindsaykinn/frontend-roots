@@ -14,8 +14,7 @@ const FamilyDetails = (props) => {
       { isPending && <div>Loading...</div> }
       { error && <div>{ error }</div> }
       { family && (
-        <container className='details'>
-            <div>
+            <div className='details'>
               <div>
                 <h2>{ family.surname }</h2>
                 <p>Country of Origin: <b>{ family.country }</b></p>
@@ -26,8 +25,7 @@ const FamilyDetails = (props) => {
                 </div> 
                 <br/>
                 <button onClick={() => props.deleteFamily(family, history)}>Delete Family</button>
-             </div>
-          </container>        
+             </div>      
       )}
     </div>
    );
