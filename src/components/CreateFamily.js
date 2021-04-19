@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom'
+import {addFamily} from '../_actions/index'
 
 const CreateFamily = () => {
   const [surname, setSurname] = useState('')
@@ -10,6 +12,7 @@ const CreateFamily = () => {
   
   const [isPending, setIsPending] = useState(false)
   const history = useHistory()
+  const dispatch = useDispatch()
 
   const handleSubmit = (e) =>{
     e.preventDefault()
@@ -17,17 +20,21 @@ const CreateFamily = () => {
 
     setIsPending(true)
 
-    fetch('http://localhost:3001/families', {
-      method: 'POST',
-      headers: 
-        {'Content-Type': 'application/json'},
-        body: JSON.stringify(family)      
-    }).then(() => {
-      console.log('new family added')
-      setIsPending(false)
-      // history.go(-1)
-      history.push('/families')
-    })
+    dispatch(addFamily(family, history))
+
+    
+
+    // fetch('http://localhost:3001/families', {
+    //   method: 'POST',
+    //   headers: 
+    //     {'Content-Type': 'application/json'},
+    //     body: JSON.stringify(family)      
+    // }).then(() => {
+    //   console.log('new family added')
+    //   setIsPending(false)
+    //   // history.go(-1)
+    //   history.push('/families')
+    // })
   }
 
   return ( 
