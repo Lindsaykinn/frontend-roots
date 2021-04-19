@@ -33,6 +33,7 @@ class App extends Component {
             <Route exact path="/about" component={About}></Route>
             <Route component={ ErrorPage }></Route>
           </Switch>
+      
         </div>
         <div>
           <Footer />

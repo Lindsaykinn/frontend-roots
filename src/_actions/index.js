@@ -7,6 +7,14 @@ export const getFamilies = () => {
   }
 }
 
+export const getFamily = (id) => {
+  return dispatch => {
+    fetch(`http://localhost:3001/families/${id}`)
+    .then(resp => resp.json())
+    .then(family => dispatch({ type: 'GET_FAMILY', payload:family}))
+  }
+}
+
 export const addFamily = (family, history) => {
   return dispatch => {
     fetch('http://localhost:3001/families', {
@@ -19,12 +27,24 @@ export const addFamily = (family, history) => {
     })
     .then(resp => resp.json())
     .then(family => {
-      dispatch({ type: 'ADD_FAMILY', family})
+      dispatch({ type: 'ADD_FAMILY', payload:family})
       history.push('/families')
     })
 
   }
 }
+
+// fetch('http://localhost:3001/families', {
+    //   method: 'POST',
+    //   headers: 
+    //     {'Content-Type': 'application/json'},
+    //     body: JSON.stringify(family)      
+    // }).then(() => {
+    //   console.log('new family added')
+    //   setIsPending(false)
+    //   // history.go(-1)
+    //   history.push('/families')
+    // })
 
 export const deleteFamily = (family, history) => {
   return dispatch => {
