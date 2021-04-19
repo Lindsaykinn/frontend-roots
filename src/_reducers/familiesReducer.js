@@ -1,5 +1,6 @@
 const initialState = {
   families: [],
+  family: null,
   loading: true
 }
 
@@ -16,10 +17,17 @@ export const familiesReducer = (state=initialState, action) => {
         loading: false,
         families: action.families
       }
+    case 'GET_FAMILY':
+      return {
+        ...state,
+        loading: false,
+        family: action.payload
+      }
     case 'ADD_FAMILY':
       return {
         ...state,
-        families: [...state.families, action.family]
+        families: [...state.families, action.payload],
+        loading: false
       }
     case 'DELETE_FAMILY_START':
       return{
