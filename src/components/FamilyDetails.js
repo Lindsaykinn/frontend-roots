@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { connect, useDispatch, useSelector } from "react-redux"
 import { useParams, useHistory } from "react-router"
 import { deleteFamily, getFamily } from '../_actions'
@@ -9,6 +9,7 @@ const FamilyDetails = (props) => {
   const family = useSelector(state => state.families.family)
   const history = useHistory()
   const dispatch = useDispatch()
+  const [count, setCount] = useState(0)
 
   useEffect(() => {
     dispatch(getFamily(id))

@@ -16,7 +16,7 @@ const CreateFamily = () => {
 
   const handleSubmit = (e) =>{
     e.preventDefault()
-    const family = { surname, country, story, person, dob }
+    const family = { surname, country, story, person, dob}
 
     setIsPending(true)
 
