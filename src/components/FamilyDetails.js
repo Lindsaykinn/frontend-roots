@@ -9,7 +9,6 @@ const FamilyDetails = (props) => {
   const family = useSelector(state => state.families.family)
   const history = useHistory()
   const dispatch = useDispatch()
-  const [count, setCount] = useState(0)
 
   useEffect(() => {
     dispatch(getFamily(id))
