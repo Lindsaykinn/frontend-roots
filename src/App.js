@@ -10,6 +10,7 @@ import CreateFamily from './components/CreateFamily'
 import FamilyDetails from './components/FamilyDetails'
 import Slideshow from './components/Slideshow'
 import About from './components/About'
+import CreatePerson from './components/CreatePerson'
 
 class App extends Component {
   componentDidMount(){
@@ -30,6 +31,7 @@ class App extends Component {
             <Route exact path='/families' component={ FamilyList }/>
             <Route exact path='/families/new' component={ CreateFamily }></Route>
             <Route exact path= "/families/:id" component={ FamilyDetails }></Route> 
+            <Route exact path= "/person/new" component={CreatePerson}></Route>
             <Route exact path="/about" component={About}></Route>
             <Route component={ ErrorPage }></Route>
           </Switch>
